@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "nodemailer": "^10.0.15",
+    "twilio": "^6.1.2"
+  }
+}
