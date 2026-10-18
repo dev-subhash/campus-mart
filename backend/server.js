@@ -24,7 +24,7 @@ const server = http.createServer(app);
 const clientUrl = process.env.CLIENT_URL || 'http://localhost:5173';
 
 //app.use(cors({ origin: clientUrl, credentials: true }));
-const cors = require("cors");
+//const cors = require("cors");
 
 app.use(cors({
   origin: [
