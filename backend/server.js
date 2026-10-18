@@ -23,8 +23,18 @@ const server = http.createServer(app);
 
 const clientUrl = process.env.CLIENT_URL || 'http://localhost:5173';
 
-app.use(cors({ origin: clientUrl, credentials: true }));
-app.use(express.json());
+//app.use(cors({ origin: clientUrl, credentials: true }));
+const cors = require("cors");
+
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://campus-mart-sigma.vercel.app"
+  ],
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const io = new Server(server, {
