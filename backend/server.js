@@ -19,6 +19,7 @@ const adminRoutes = require('./routes/adminRoutes');
 connectDB();
 
 const app = express();
+
 const server = http.createServer(app);
 
 const clientUrl = process.env.CLIENT_URL || 'http://localhost:5173';
